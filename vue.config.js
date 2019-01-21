@@ -17,6 +17,20 @@ module.exports = {
     }
   },
   chainWebpack: config => {
+    config.plugin('define').tap(args =>{
+      const argv = process.argv
+      const mode = argv[argv.indexOf('--project-mode') + 1]
+     args[0]['process.env'].MODE = `"${mode}"`
+     args[0]['process.env'].BASE_API = '"http://47.94.138.75:8000"'
+     return args
+    })
+
+
+
+
+
+
+
     // svg loader
     const svgRule = config.module.rule('svg') // 找到svg-loader
     svgRule.uses.clear() // 清除已有的loader, 如果不这样做会添加在此loader之后
