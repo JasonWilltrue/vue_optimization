@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <svg-icon icon-class="Addheart" class="logo"  />
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -16,3 +17,9 @@ export default {
   }
 }
 </script>
+
+<style media="screen">
+    .logo{
+      font-size: 10em;
+    }
+</style>
